@@ -4,8 +4,9 @@
   "deployUrl": "https://hackaton-frontend-lumon-20262-f21k.vercel.app",
   "storageProvider": "SUPABASE | CLOUDINARY",
   "integrantes": [
-    { "nombre": "Nombre Apellido", "codigo": "CODIGO UTEC" },
-    { "nombre": "Nombre Apellido", "codigo": "CODIGO UTEC" },
-    { "nombre": "Nombre Apellido", "codigo": "CODIGO UTEC" }
+    {
+      "nombre": "Edmundo Andre Centti Torres",
+      "codigo": "202320196"
+    }
   ]
 }

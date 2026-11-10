@@ -921,12 +921,11 @@ Supabase o Cloudinary que no sean públicas).
 
 | Integrante | Código |
 |:--|:--|
-| Nombre Apellido | CODIGO |
-| Nombre Apellido | CODIGO |
-| Nombre Apellido | CODIGO |
+| Edmundo Andre Centti Torres | 202320196 |
 
-- **Producción:** https://<su-app>.vercel.app
-- **Storage:** (Supabase | Cloudinary)
+- **TEAM_CODE:** TEAM-071
+- **Producción:** https://hackaton-frontend-lumon-20262-f21k.vercel.app
+- **Storage:** sin configurar (CP4 no implementado)
 
 ### Ejecutar
 
