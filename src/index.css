@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@keyframes tremor {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(calc(var(--amp) * 1px), calc(var(--amp) * -1px)); }
+  50% { transform: translate(calc(var(--amp) * -1px), calc(var(--amp) * 1px)); }
+  75% { transform: translate(calc(var(--amp) * 1px), calc(var(--amp) * 1px)); }
+}
+.cell-scary { animation: tremor calc(0.9s - var(--amp) * 0.12s) infinite linear; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) {
+  .cell-scary { animation: none; text-decoration: underline; text-decoration-thickness: 2px; }
+}
