@@ -925,7 +925,7 @@ Supabase o Cloudinary que no sean públicas).
 
 - **TEAM_CODE:** TEAM-071
 - **Producción:** https://hackaton-frontend-lumon-20262-f21k.vercel.app
-- **Storage:** sin configurar (CP4 no implementado)
+- **Storage:** Supabase Storage (bucket `lumon-media`, pendiente de configurar)
 
 ### Ejecutar
 

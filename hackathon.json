@@ -2,7 +2,7 @@
   "teamCode": "TEAM-071",
   "teamName": "Team32452",
   "deployUrl": "https://hackaton-frontend-lumon-20262-f21k.vercel.app",
-  "storageProvider": "SUPABASE | CLOUDINARY",
+  "storageProvider": "SUPABASE",
   "integrantes": [
     {
       "nombre": "Edmundo Andre Centti Torres",
