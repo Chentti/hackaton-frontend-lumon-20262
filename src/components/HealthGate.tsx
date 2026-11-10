@@ -12,7 +12,7 @@ export function HealthGate({ children }: { children: ReactNode }) {
     window.clearTimeout(timer.current);
     try {
       const res = await fetch(`${API_BASE}/meta/health`, { headers: { "X-Lumon-Build": BUILD } });
-      if (res.ok) {
+      if (res.ok && (res.headers.get("content-type") ?? "").includes("json")) {
         setOk(true);
         return;
       }
@@ -30,6 +30,15 @@ export function HealthGate({ children }: { children: ReactNode }) {
     return () => window.clearTimeout(timer.current);
   }, [check]);
 
+  if (!API_BASE)
+    return (
+      <main className="min-h-screen grid place-items-center p-6">
+        <p role="alert" className="max-w-md text-center text-amber-200">
+          Falta configurar VITE_API_BASE_URL. Crea el archivo .env (copia de .env.example) con las URLs de la API y
+          reinicia <code>npm run dev</code>. En Vercel, agrégalas en Environment Variables y vuelve a desplegar.
+        </p>
+      </main>
+    );
   if (ok) return <>{children}</>;
   return (
     <main className="min-h-screen grid place-items-center p-6">
