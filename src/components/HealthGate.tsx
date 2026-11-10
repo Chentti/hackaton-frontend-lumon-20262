@@ -12,7 +12,7 @@ export function HealthGate({ children }: { children: ReactNode }) {
     window.clearTimeout(timer.current);
     try {
       const res = await fetch(`${API_BASE}/meta/health`, { headers: { "X-Lumon-Build": BUILD } });
-      if (res.ok && (res.headers.get("content-type") ?? "").includes("json")) {
+      if (res.ok && !(res.headers.get("content-type") ?? "").includes("text/html")) {
         setOk(true);
         return;
       }
