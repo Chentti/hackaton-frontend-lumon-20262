@@ -54,7 +54,9 @@ export default function Estado() {
     }
   }
 
-  const origin = window.location.origin;
+  const [origin, setOrigin] = useState(
+    window.location.hostname === "localhost" ? "https://" : window.location.origin,
+  );
   const checks = extractChecks(checkRes);
 
   return (
@@ -90,7 +92,9 @@ export default function Estado() {
 
       <div className="space-y-2">
         <h2 className="text-xl font-semibold">Dominio desplegado</h2>
-        <p className="text-sm text-slate-300">Origen actual: <code>{origin}</code></p>
+        <label htmlFor="origin" className="block text-sm text-slate-300">URL de producción (Vercel), sin barra final</label>
+        <input id="origin" value={origin} onChange={(e) => setOrigin(e.target.value.trim().replace(/\/+$/, ""))}
+          className="w-full rounded bg-slate-800 px-3 py-2 text-white" placeholder="https://su-app.vercel.app" />
         <div className="flex flex-wrap gap-2">
           <button disabled={!!busy} className="rounded bg-slate-700 px-3 py-2"
             onClick={() => void run("Challenge", () => api("/integrations/deploy/challenge", { method: "POST", body: { origin }, maxRetries: 1 }), setChallenge)}>
